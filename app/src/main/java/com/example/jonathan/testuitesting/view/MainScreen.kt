@@ -1,5 +1,6 @@
 package com.example.jonathan.testuitesting.view
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -16,12 +17,20 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun MyApp() {
+fun MainScreen() {
     var counter by remember { mutableStateOf(0) }
-    Column(modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
-        Button(onClick = { counter++ }) {
+
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Button(
+            onClick = { counter++ }
+        ) {
             Text("Click me!")
         }
+
         Text(text = "Count: $counter", Modifier.padding(top = 16.dp))
     }
 }
@@ -29,5 +38,5 @@ fun MyApp() {
 @Composable
 @Preview
 fun PreviewMyApp() {
-    MyApp()
+    MainScreen()
 }
